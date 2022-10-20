@@ -1,0 +1,15 @@
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/obj/Debug/net6.0/AssAdvance.csproj.AssemblyReference.cache
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/obj/Debug/net6.0/AssAdvance.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/obj/Debug/net6.0/AssAdvance.AssemblyInfoInputs.cache
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/obj/Debug/net6.0/AssAdvance.AssemblyInfo.cs
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/obj/Debug/net6.0/AssAdvance.csproj.CoreCompileInputs.cache
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/bin/Debug/net6.0/AssAdvance
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/bin/Debug/net6.0/AssAdvance.deps.json
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/bin/Debug/net6.0/AssAdvance.runtimeconfig.json
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/bin/Debug/net6.0/AssAdvance.dll
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/bin/Debug/net6.0/AssAdvance.pdb
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/obj/Debug/net6.0/AssAdvance.dll
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/obj/Debug/net6.0/refint/AssAdvance.dll
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/obj/Debug/net6.0/AssAdvance.pdb
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/obj/Debug/net6.0/AssAdvance.genruntimeconfig.cache
+/Users/nguyenhoan/Projects/1651advance/AssAdvance/obj/Debug/net6.0/ref/AssAdvance.dll
