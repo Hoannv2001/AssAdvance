@@ -14,6 +14,9 @@ namespace AssAdvance
         public string Author{get=>author; set=>author=value;}
         public double Price{get=>price; set=>price=value;}
         public string Description{get=>desciption;set=>desciption=value;}
+        public BookItems(){
+            
+        }
         public BookItems(string id, string bookname, string category, string author, double price, string description){
             this.Id =id;
             this.BookName=bookname;

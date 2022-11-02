@@ -16,20 +16,27 @@ namespace AssAdvance
         public static void AdminMenu(){
             Console.WriteLine("********** Admin Menu********");
             Console.WriteLine("1: View Your Profile");
-            Console.WriteLine("2: Add Book into Book Items");
-            Console.WriteLine("3: Update Book in Book Items");
-            Console.WriteLine("4: Remove Book in Book Items");
-            Console.WriteLine("5: View Book in Book Items");
-            Console.WriteLine("6: Manager Customer");
-            Console.WriteLine("7: Exit!!!");
+            Console.WriteLine("2: Manager Book");
+            Console.WriteLine("3: Manager Customer");
+            Console.WriteLine("4: Exit!!!");
         }
-        public static void PrintManagerCustomer(){
+        public static void PrintManagerBook(){
+            Console.WriteLine("********** Manager Customer Menu********");
+            Console.WriteLine("1: View information of Book.");
+            Console.WriteLine("2: Add Book.");
+            Console.WriteLine("3: Update Book.");
+            Console.WriteLine("4: Delete Book.");
+            Console.WriteLine("5: Search Book.");
+            Console.WriteLine("6: Exit");
+        }
+         public static void PrintManagerCustomer(){
             Console.WriteLine("********** Manager Customer Menu********");
             Console.WriteLine("1: View information of Cusomer.");
             Console.WriteLine("2: Add customer.");
             Console.WriteLine("3: Update Customer.");
             Console.WriteLine("4: Delete Customer.");
-            Console.WriteLine("5: Exit");
+            Console.WriteLine("5: Search Customer.");
+            Console.WriteLine("6: Exit");
         }
         public static string EnterID(){
             Console.WriteLine("Enter ID of Book ");

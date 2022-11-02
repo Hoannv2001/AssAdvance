@@ -11,6 +11,9 @@ namespace AssAdvance
         public customer(Admin admin, string id, string nickname, string fullName, string address, string email):base(fullName, address, email){
             this.Id = id;
             this.Nickname = nickname;
+            this.Fullname = fullName;
+            this.Address = address;
+            this.Email = email;
             this.Admin=admin;
         }
         public override string InfoUser()
@@ -22,5 +25,13 @@ namespace AssAdvance
         //     return admin.searchBookItems("1");
         //     // return searchBook;
         // }
+        public customer login(){
+            List<customer> cs = new List<customer>();
+            Console.WriteLine("Enter Email");
+            string eC = Console.ReadLine();
+            Console.WriteLine("Enter ID");
+            string id = Console.ReadLine();
+            return cs.FirstOrDefault(c => c.Email.CompareTo(eC)==0 && c.Id.CompareTo(id)==0);
+        }
     }
 }

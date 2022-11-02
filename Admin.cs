@@ -5,6 +5,7 @@ namespace AssAdvance
         private string idAdmin;
         private List<BookItems> bookList;
         private List<customer> cs;
+        
         public string IdAdmin{get=>idAdmin; set=>idAdmin=value;}
         public List<BookItems> BookList{get=>bookList;set=>bookList=value;}
         public List<customer> Cs{get=> cs; set=>cs=value;}
@@ -91,5 +92,14 @@ namespace AssAdvance
             }
             return searchBook;
         }
+        public List<customer> searchCus(string csId){
+            var searchCus = Cs.FindAll(a=>a.Id == csId);
+            foreach (var item in searchCus)
+            {
+                Console.WriteLine(item.InfoUser());
+            }
+            return searchCus;
+        }
+
     }
 }
