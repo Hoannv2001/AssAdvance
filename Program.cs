@@ -4,9 +4,11 @@ using System.Linq;
 namespace AssAdvance
 {
     class Program{
+
         static void Main(string[] args){
             bool flag = false;
             List<customer> customers = new List<customer>();
+            List<CartItems>cit = new List<CartItems>();
             Admin admin = new Admin("1","Nguyen Van Hoan","Da Nang","hoannvgcs190736@fpl.edu");
             while (!flag)
             {
@@ -204,37 +206,37 @@ namespace AssAdvance
                                                     cs.ViewBook();
                                                 break;
                                                 case 3://Add Cart
+                                                    // Cart C =new Cart();
                                                     Console.WriteLine("Enter ID Order");
                                                     string idOrder = Console.ReadLine();
                                                     Console.WriteLine("Enter date order");
                                                     string dateOrder = Console.ReadLine();   
                                                     Console.WriteLine("Enter quanlity your are order");
-                                                    // Cart cartOrder = new Cart(idOrder,dateOrder,)
-                                                    int n =  Convert.ToInt32(Console.ReadLine());
-                                                    Console.WriteLine("Enter ID Book");
+                                                    int n = Convert.ToInt32(Console.ReadLine());
+                                                    for (int i = 0; i < n; i++)
+                                                    {
+                                                        Console.WriteLine("Enter ID Book");                                                         
                                                     string idBook = Console.ReadLine();
                                                     var book = admin.findIDBook(idBook);
                                                     Console.WriteLine("Enter Quanlity Book");
-                                                    int quanlity = Convert.ToInt32(Console.ReadLine());
-                                                    CartItems CI = new CartItems(quanlity,book);
-                                                    Cart C = new Cart(idOrder, dateOrder,CI);
-
+                                                    int quanlity = Convert.ToInt32(Console.ReadLine());                                                        
+                                                    CartItems Ci = new CartItems(quanlity,book);
+                                                    cs.addCart(new Cart(idOrder, dateOrder,Ci));
+                                                    }
                                                     
-                                                    // for (int i = 0; i < n; i++)
-                                                    // {
-                                                    //      Console.WriteLine("Enter ID Book");
-                                                    //      string idBook = Console.ReadLine();
-                                                    //     var book = admin.findIDBook(idBook);
-                                                    //     Console.WriteLine("Enter Quanlity Book");
-                                                    //     int quanlity = Convert.ToInt32(Console.ReadLine());
-                                                    //     CartItems Ci = new CartItems(quanlity,book);
-                                                    //      Console.WriteLine(book);
-                                                    //     Console.WriteLine (Ci.ToString());
-                                                    // }    
-                                                    // Cart cartOrder = new Cart(idOrder,dateOrder,cartItems);                                  
+
+                                                    // Console.WriteLine(Ci.ToString());
+                                                    // Console.WriteLine(book);                                 
                                                 break;
                                                 case 4://view Cart
+                                                // string a = Console.ReadLine();
+                                                // cs.ViewCart(a);
+                                                // cs.view();
                                                 cs.ViewCart();
+                                                break;
+                                                case 5: // Remove Cart
+                                                string idRemove = Console.ReadLine();
+                                                cs.DeleteCart(idRemove);
                                                 break;
                                                 case 6:
                                                     cs.searchBookItems(PrintAndEnter.EnterKeySearch());

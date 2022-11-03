@@ -15,22 +15,15 @@ namespace AssAdvance
             this.Quantity = quanlity;
             this.BookItems= bookItems;
         }
-        // public double TotalOfPriceBook(string idBook){
-        //     double result = 0;
-        //     var searchBook = BookItems.FirstOrDefault(a=>a.Id.Equals(idBook));
-        //     if(searchBook == null){
-        //         return result =0;
-        //     }else{
-        //         result = Quantity*searchBook.Price;
-        //         return result;
-        //     }
-        // }
-        // public void addCartItems(BookItems bi){
-        //     this.
-        // }
+        public double TotalOfPriceBook(){
+            double result = 0;
+                result = Quantity*BookItems.Price;
+                return result;
+            // }
+        }
         public override string ToString()
         {
-            return $"{Quantity}\t{BookItems.BookName}\t{BookItems.Category}\t{BookItems.Price}";
+            return $"{Quantity}\t{BookItems.BookName}\t{BookItems.Category}\t{BookItems.Price}\t" + TotalOfPriceBook();
         }
     }
 }

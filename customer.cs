@@ -31,14 +31,25 @@ namespace AssAdvance
          public List<BookItems> searchBookItems(string bookName){
             return admin.searchBookItems(bookName);
          }
+         //Cart
          public void addCart(Cart c){
             this.Carts.Add(c);
          }
          public void ViewCart(){
             foreach (var item in Carts)
-            {   
-                Console.WriteLine("a");
-                Console.WriteLine(item);                
+            {
+                Console.WriteLine(item.ToString());
+            }
+         }
+         
+         public bool DeleteCart(string idCart){
+            var idRemovCart = Carts.FirstOrDefault(a=>a.CartID.Equals(idCart));
+            if(idRemovCart == null){
+                Console.WriteLine($"ID customer {idCart} do not exits.");
+                return false;
+            }else{
+                this.Carts.Remove(idRemovCart);
+                return true;
             }
          }
     
