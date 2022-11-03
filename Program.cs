@@ -1,12 +1,12 @@
-﻿namespace AssAdvance
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+namespace AssAdvance
 {
     class Program{
         static void Main(string[] args){
             bool flag = false;
             List<customer> customers = new List<customer>();
-            // User u = new User();
-            
-            // b.ToString();
             Admin admin = new Admin("1","Nguyen Van Hoan","Da Nang","hoannvgcs190736@fpl.edu");
             while (!flag)
             {
@@ -166,16 +166,98 @@
                     case 2://customer
                         do
                         {
-                            // List<customer> cs = new List<customer>();
-                            // Console.WriteLine("Enter Email");
-                            // string eC = Console.ReadLine();
-                            // Console.WriteLine("Enter ID");
-                            // string id = Console.ReadLine();
-                            // bool a = cs.c
-                            // if (Comparer())
-                            // {
-                                
-                            // }
+                            Console.WriteLine("1: Register");
+                            Console.WriteLine("2: Login");
+                            Console.WriteLine("3: Exit");
+                            int choiceOfCus = Convert.ToInt32(Console.ReadLine()); 
+                            switch (choiceOfCus)
+                            {
+                                case 1: //register
+                                    admin.AddCustomer(new customer(admin, PrintAndEnter.EnterIDCs(),
+                                    PrintAndEnter.EnterNickname(), PrintAndEnter.EnterFullName(),
+                                    PrintAndEnter.EnterAdress(), PrintAndEnter.EnterEmail()));
+                                break;
+                                case 2: // login
+                                    Console.WriteLine("Enter Email:");
+                                    string eC = Console.ReadLine();
+                                    Console.WriteLine("Enter ID:");
+                                    string id = Console.ReadLine();
+                                    customer cs = admin.loginOfCus(eC,id);
+                                    if (cs == null)
+                                    {
+                                        Console.WriteLine("Wrong email or ID");
+                                        // flag = true;
+                                        break;
+                                    }else
+                                    {
+                                         while (!flag)
+                                        {
+                                            int choiceCart = Convert.ToInt32(Console.ReadLine());
+                                            switch (choiceCart)
+                                            {
+                                                case 1: //view Profile Customer
+                                                     Console.WriteLine(admin.loginOfCus(eC,id).InfoUser());
+                                                    //  flag = true;
+                                                break;
+                                                case 2:// View Book Items
+                                                
+                                                    cs.ViewBook();
+                                                break;
+                                                case 3://Add Cart
+                                                    Console.WriteLine("Enter ID Order");
+                                                    string idOrder = Console.ReadLine();
+                                                    Console.WriteLine("Enter date order");
+                                                    string dateOrder = Console.ReadLine();   
+                                                    Console.WriteLine("Enter quanlity your are order");
+                                                    // Cart cartOrder = new Cart(idOrder,dateOrder,)
+                                                    int n =  Convert.ToInt32(Console.ReadLine());
+                                                    Console.WriteLine("Enter ID Book");
+                                                    string idBook = Console.ReadLine();
+                                                    var book = admin.findIDBook(idBook);
+                                                    Console.WriteLine("Enter Quanlity Book");
+                                                    int quanlity = Convert.ToInt32(Console.ReadLine());
+                                                    CartItems CI = new CartItems(quanlity,book);
+                                                    Cart C = new Cart(idOrder, dateOrder,CI);
+
+                                                    
+                                                    // for (int i = 0; i < n; i++)
+                                                    // {
+                                                    //      Console.WriteLine("Enter ID Book");
+                                                    //      string idBook = Console.ReadLine();
+                                                    //     var book = admin.findIDBook(idBook);
+                                                    //     Console.WriteLine("Enter Quanlity Book");
+                                                    //     int quanlity = Convert.ToInt32(Console.ReadLine());
+                                                    //     CartItems Ci = new CartItems(quanlity,book);
+                                                    //      Console.WriteLine(book);
+                                                    //     Console.WriteLine (Ci.ToString());
+                                                    // }    
+                                                    // Cart cartOrder = new Cart(idOrder,dateOrder,cartItems);                                  
+                                                break;
+                                                case 4://view Cart
+                                                cs.ViewCart();
+                                                break;
+                                                case 6:
+                                                    cs.searchBookItems(PrintAndEnter.EnterKeySearch());
+                                                break;
+                                                case 7://exit
+                                                    flag = true;
+                                                break;
+                                                
+                                                
+                                                default:
+                                                break;
+                                            }
+                                        }
+
+                                        break;
+                                    }
+                                case 3: //exit
+                                flag = true;
+                                break;
+                                default:
+                                break;
+                            }
+                        
                         } while (!flag);
                          flag = false;
                         break;

@@ -13,6 +13,7 @@ namespace AssAdvance
             this.Address = address;
             this.Email = email;
         }
+        
         public override string ToString()
         {
             return $"{Fullname}\t{Address}\t{Email}";

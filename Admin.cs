@@ -100,6 +100,14 @@ namespace AssAdvance
             }
             return searchCus;
         }
+        public customer loginOfCus(string eC, string id){
 
+            var c = Cs.FirstOrDefault(c => c.Email.CompareTo(eC)==0 && c.Id.CompareTo(id)==0);
+            return c;
+        }
+        public BookItems findIDBook(string idB){
+            var c = BookList.FirstOrDefault(c => c.Id.CompareTo(idB)==0);
+            return c;
+        }
     }
 }

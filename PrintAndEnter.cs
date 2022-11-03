@@ -38,6 +38,15 @@ namespace AssAdvance
             Console.WriteLine("5: Search Customer.");
             Console.WriteLine("6: Exit");
         }
+         public static void PrintAdcart(){
+            Console.WriteLine("********** Manager Customer Menu********");
+            Console.WriteLine("1: View information of Cusomer.");
+            Console.WriteLine("2: Add customer.");
+            Console.WriteLine("3: Update Customer.");
+            Console.WriteLine("4: Delete Customer.");
+            Console.WriteLine("5: Search Customer.");
+            Console.WriteLine("6: Exit");
+        }
         public static string EnterID(){
             Console.WriteLine("Enter ID of Book ");
             return Console.ReadLine();
