@@ -40,12 +40,13 @@ namespace AssAdvance
         }
          public static void PrintAdcart(){
             Console.WriteLine("********** Manager Customer Menu********");
-            Console.WriteLine("1: View information of Cusomer.");
-            Console.WriteLine("2: Add customer.");
-            Console.WriteLine("3: Update Customer.");
-            Console.WriteLine("4: Delete Customer.");
-            Console.WriteLine("5: Search Customer.");
-            Console.WriteLine("6: Exit");
+            Console.WriteLine("1: View Profile.");
+            Console.WriteLine("2: View Book");
+            Console.WriteLine("3: Add Cart.");
+            Console.WriteLine("4: Update Cart.");
+            Console.WriteLine("5: Delete Cart.");
+            Console.WriteLine("6: View Cart.");
+            Console.WriteLine("7: Exit");
         }
         public static string EnterID(){
             Console.WriteLine("Enter ID of Book ");

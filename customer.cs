@@ -38,7 +38,7 @@ namespace AssAdvance
          public void ViewCart(){
             foreach (var item in Carts)
             {
-                Console.WriteLine(item.ToString());
+                item.ViewCart();
             }
          }
          

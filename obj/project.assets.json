@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Desktop\\code\\assadvance\\AssAdvance.csproj",
+      "projectUniqueName": "E:\\Desktop\\New folder\\assadvance\\AssAdvance.csproj",
       "projectName": "AssAdvance",
-      "projectPath": "E:\\Desktop\\code\\assadvance\\AssAdvance.csproj",
+      "projectPath": "E:\\Desktop\\New folder\\assadvance\\AssAdvance.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\Desktop\\code\\assadvance\\obj\\",
+      "outputPath": "E:\\Desktop\\New folder\\assadvance\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"

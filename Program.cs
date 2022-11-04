@@ -194,6 +194,7 @@ namespace AssAdvance
                                     {
                                          while (!flag)
                                         {
+                                            PrintAndEnter.PrintAdcart();
                                             int choiceCart = Convert.ToInt32(Console.ReadLine());
                                             switch (choiceCart)
                                             {
@@ -206,47 +207,41 @@ namespace AssAdvance
                                                     cs.ViewBook();
                                                 break;
                                                 case 3://Add Cart
-                                                    // Cart C =new Cart();
                                                     Console.WriteLine("Enter ID Order");
                                                     string idOrder = Console.ReadLine();
                                                     Console.WriteLine("Enter date order");
                                                     string dateOrder = Console.ReadLine();   
                                                     Console.WriteLine("Enter quanlity your are order");
                                                     int n = Convert.ToInt32(Console.ReadLine());
-                                                    for (int i = 0; i < n; i++)
-                                                    {
-                                                        Console.WriteLine("Enter ID Book");                                                         
-                                                    string idBook = Console.ReadLine();
-                                                    var book = admin.findIDBook(idBook);
-                                                    Console.WriteLine("Enter Quanlity Book");
-                                                    int quanlity = Convert.ToInt32(Console.ReadLine());                                                        
-                                                    CartItems Ci = new CartItems(quanlity,book);
-                                                    cs.addCart(new Cart(idOrder, dateOrder,Ci));
-                                                    }
                                                     
-
-                                                    // Console.WriteLine(Ci.ToString());
-                                                    // Console.WriteLine(book);                                 
+                                                    for (int i = 0; i < n; i++)
+                                                    {   
+                                                        Console.WriteLine("Enter ID Book: ");  
+                                                         string idBook = Console.ReadLine();                                                   
+                                                        Console.WriteLine("Enter Quanlity: ");   
+                                                        int quanlity = Convert.ToInt32(Console.ReadLine()); 
+                                                        CartItems CI = new CartItems(quanlity, idOrder);                                                       
+                                                        var newBookItems = admin.findIDBook(idBook);  
+                                                        CI.addCartItems(newBookItems);
+                                                        // CI.infoCartItems();
+                                                        cit.Add(CI);
+                                                    }
+                                                    cs.addCart(new Cart(idOrder, dateOrder, cit));
                                                 break;
-                                                case 4://view Cart
-                                                // string a = Console.ReadLine();
-                                                // cs.ViewCart(a);
-                                                // cs.view();
-                                                cs.ViewCart();
+                                                case 4://Update Cart
                                                 break;
                                                 case 5: // Remove Cart
                                                 string idRemove = Console.ReadLine();
                                                 cs.DeleteCart(idRemove);
                                                 break;
-                                                case 6:
-                                                    cs.searchBookItems(PrintAndEnter.EnterKeySearch());
-                                                break;
+                                                case 6: // View Cart
+                                                    cs.ViewCart();
+                                                break;                                                
                                                 case 7://exit
                                                     flag = true;
-                                                break;
-                                                
-                                                
+                                                break;                                                                                          
                                                 default:
+                                                    Console.WriteLine("Please Enter choice have in Menu");
                                                 break;
                                             }
                                         }
