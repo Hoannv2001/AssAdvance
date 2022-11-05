@@ -229,8 +229,16 @@ namespace AssAdvance
                                                     cs.addCart(new Cart(idOrder, dateOrder, cit));
                                                 break;
                                                 case 4://Update Cart
+                                                    Console.WriteLine("Enter ID cart Update:");
+                                                    string idCart = Console.ReadLine();
+                                                    Console.WriteLine("Enter IDBook Update in Cart:");
+                                                    string idBookU = Console.ReadLine();
+                                                    Console.WriteLine("Enter quantity Update:");
+                                                    int quanlityU = Convert.ToInt32(Console.ReadLine());
+                                                    cs.UpdateCart(quanlityU, idBookU,idCart);
                                                 break;
                                                 case 5: // Remove Cart
+                                                Console.WriteLine("Enter Cart ID delete:");
                                                 string idRemove = Console.ReadLine();
                                                 cs.DeleteCart(idRemove);
                                                 break;

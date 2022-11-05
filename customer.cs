@@ -34,6 +34,7 @@ namespace AssAdvance
          //Cart
          public void addCart(Cart c){
             this.Carts.Add(c);
+            Console.WriteLine("Add Item to cart Successfull!");
          }
          public void ViewCart(){
             foreach (var item in Carts)
@@ -45,13 +46,31 @@ namespace AssAdvance
          public bool DeleteCart(string idCart){
             var idRemovCart = Carts.FirstOrDefault(a=>a.CartID.Equals(idCart));
             if(idRemovCart == null){
-                Console.WriteLine($"ID customer {idCart} do not exits.");
+                Console.WriteLine($"ID CartID {idCart} do not exits.");
                 return false;
             }else{
                 this.Carts.Remove(idRemovCart);
+                foreach (var item in Carts)
+                {
+                    item.removeCartItem(idCart);
+                }
+                Console.WriteLine("Delete successful!");
                 return true;
             }
          }
-    
+        public bool UpdateCart(int quanlity, string idBook, string idCart){
+            var updateCart = Carts.FindAll(a=>a.CartID==idCart);
+            if (updateCart == null)
+            {
+                Console.WriteLine($"ID Cart {updateCart} do not exits.");
+                return false;
+            }else{
+                foreach (var item in updateCart)
+                {
+                    item.UpdateCartItem(quanlity,idBook, idCart);
+                }
+                return true;
+            }
+        }
     }
 }
