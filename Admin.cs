@@ -16,7 +16,7 @@ namespace AssAdvance
         }
         public override string InfoUser()
         {
-            return $"{IdAdmin}\t{Fullname}\t{Address}\t{Email}";
+            return $"{IdAdmin}\t"+ToString();
         }
         public void AddBook(BookItems BI){
             this.BookList.Add(BI);
@@ -49,7 +49,7 @@ namespace AssAdvance
         public void ViewBook(){
             foreach (var item in BookList)
             {
-                Console.WriteLine(item.ToString());
+                Console.WriteLine(item.ToString());            
             }
         }
         public void AddCustomer(customer c){
@@ -81,7 +81,7 @@ namespace AssAdvance
         public void ViewCustomer(){
             foreach (var item in Cs)
             {
-                Console.WriteLine(item.InfoUser());
+                Console.WriteLine(item.InfoUser()); 
             }
         }
         public List<BookItems> searchBookItems(string bookName){
@@ -90,7 +90,7 @@ namespace AssAdvance
             {
                 Console.WriteLine(item);
             }
-            return searchBook;
+            return searchBook;           
         }
         public List<customer> searchCus(string csId){
             var searchCus = Cs.FindAll(a=>a.Id == csId);

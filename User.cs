@@ -19,11 +19,6 @@ namespace AssAdvance
             return $"{Fullname}\t{Address}\t{Email}";
         }
         public abstract string InfoUser();
-        // public Admin login()
-        // {
-        //     Console.WriteLine("Enter email:");
-        //     string e = Console.ReadLine();
-        //     retur
-        // }
+    
     }
 }

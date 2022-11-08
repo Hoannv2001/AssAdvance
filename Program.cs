@@ -48,6 +48,7 @@ namespace AssAdvance
                                                             case 2: // add new Book
                                                                 Console.WriteLine("Enter Book Quantity You want to Add:");
                                                                 int n = int.Parse(Console.ReadLine());
+                                                              
                                                                 for (int i = 0; i < n; i++)
                                                                 {
                                                                     try
@@ -113,6 +114,7 @@ namespace AssAdvance
                                                                     admin.AddCustomer(new customer(admin, PrintAndEnter.EnterIDCs(),
                                                                     PrintAndEnter.EnterNickname(), PrintAndEnter.EnterFullName(),
                                                                     PrintAndEnter.EnterAdress(), PrintAndEnter.EnterEmail()));
+                                                                    Console.WriteLine("add successfull---------");
                                                                 }
                                                                 catch (FormatException ex)
                                                                 {
@@ -127,6 +129,7 @@ namespace AssAdvance
                                                                 admin.UpdateCustomer(admin, PrintAndEnter.EnterIDCs(),
                                                                 PrintAndEnter.EnterNickname(),PrintAndEnter.EnterFullName(),
                                                                 PrintAndEnter.EnterAdress());
+                                                                Console.WriteLine("Update successfull---------");
                                                             }
                                                             catch (FormatException ex)
                                                                 {
@@ -136,6 +139,7 @@ namespace AssAdvance
                                                         case 4: // remove cus
                                                             Console.WriteLine("Remove Customer******");
                                                             admin.RemoveCustomer(PrintAndEnter.EnterIDCs());
+                                                            Console.WriteLine("Remove successfull---------");
                                                             break;
                                                         case 5: // search cus
                                                             admin.searchCus(PrintAndEnter.EnterKeySearch());
@@ -168,9 +172,7 @@ namespace AssAdvance
                     case 2://customer
                         do
                         {
-                            Console.WriteLine("1: Register");
-                            Console.WriteLine("2: Login");
-                            Console.WriteLine("3: Exit");
+                            PrintAndEnter.LoginAndRegisterCs();
                             int choiceOfCus = Convert.ToInt32(Console.ReadLine()); 
                             switch (choiceOfCus)
                             {
@@ -188,7 +190,6 @@ namespace AssAdvance
                                     if (cs == null)
                                     {
                                         Console.WriteLine("Wrong email or ID");
-                                        // flag = true;
                                         break;
                                     }else
                                     {
@@ -202,8 +203,7 @@ namespace AssAdvance
                                                      Console.WriteLine(admin.loginOfCus(eC,id).InfoUser());
                                                     //  flag = true;
                                                 break;
-                                                case 2:// View Book Items
-                                                
+                                                case 2:// View Book Items 
                                                     cs.ViewBook();
                                                 break;
                                                 case 3://Add Cart
@@ -213,18 +213,23 @@ namespace AssAdvance
                                                     string dateOrder = Console.ReadLine();   
                                                     Console.WriteLine("Enter quanlity your are order");
                                                     int n = Convert.ToInt32(Console.ReadLine());
-                                                    
                                                     for (int i = 0; i < n; i++)
                                                     {   
                                                         Console.WriteLine("Enter ID Book: ");  
-                                                         string idBook = Console.ReadLine();                                                   
+                                                        string idBook = Console.ReadLine(); 
                                                         Console.WriteLine("Enter Quanlity: ");   
                                                         int quanlity = Convert.ToInt32(Console.ReadLine()); 
                                                         CartItems CI = new CartItems(quanlity, idOrder);                                                       
-                                                        var newBookItems = admin.findIDBook(idBook);  
-                                                        CI.addCartItems(newBookItems);
-                                                        // CI.infoCartItems();
-                                                        cit.Add(CI);
+                                                        var newBookItems = admin.findIDBook(idBook); 
+                                                        if (newBookItems==null)
+                                                        {
+                                                            Console.WriteLine("Ko cos sach nay");
+                                                        }else
+                                                        {
+                                                            CI.addBookInCartItem(newBookItems);
+                                                            cit.Add(CI);
+                                                        }
+                                                
                                                     }
                                                     cs.addCart(new Cart(idOrder, dateOrder, cit));
                                                 break;
@@ -244,8 +249,13 @@ namespace AssAdvance
                                                 break;
                                                 case 6: // View Cart
                                                     cs.ViewCart();
+                                                break;
+                                                case 7://search book
+                                                Console.WriteLine("Enter book name Search: ");
+                                                string nameBook =Console.ReadLine();
+                                                cs.searchBookItems(nameBook);
                                                 break;                                                
-                                                case 7://exit
+                                                case 8://exit
                                                     flag = true;
                                                 break;                                                                                          
                                                 default:
@@ -267,14 +277,8 @@ namespace AssAdvance
                          flag = false;
                         break;
                     case 3: //exit
-                        Console.WriteLine("fff");
-                        admin.ViewBook();
-                        Console.WriteLine("fff");
-                        admin.ViewCustomer();
-                        break;
-                    case 4: //test
-                    admin.ViewBook();
-                    break;
+                        return;
+           
                     default:
                         Console.WriteLine("Please Enter choice have in Menu");
                         break;

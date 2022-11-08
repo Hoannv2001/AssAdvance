@@ -29,6 +29,12 @@ namespace AssAdvance
             Console.WriteLine("5: Search Book.");
             Console.WriteLine("6: Exit");
         }
+        public static void LoginAndRegisterCs(){
+              Console.WriteLine("**********Register and Login********");
+            Console.WriteLine("1: Register");
+            Console.WriteLine("2: Login");
+            Console.WriteLine("3: Exit");
+        }
          public static void PrintManagerCustomer(){
             Console.WriteLine("********** Manager Customer Menu********");
             Console.WriteLine("1: View information of Cusomer.");
@@ -46,7 +52,8 @@ namespace AssAdvance
             Console.WriteLine("4: Update Cart.");
             Console.WriteLine("5: Delete Cart.");
             Console.WriteLine("6: View Cart.");
-            Console.WriteLine("7: Exit");
+            Console.WriteLine("7: Search Book.");
+            Console.WriteLine("8: Exit");
         }
         public static string EnterID(){
             Console.WriteLine("Enter ID of Book ");

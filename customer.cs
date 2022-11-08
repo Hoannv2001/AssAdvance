@@ -12,7 +12,8 @@ namespace AssAdvance
         public Admin Admin{get=>admin;set=>admin=value;}
         public List<Cart> Carts {get=>this.carts; set=>this.carts=value;}
        
-        public customer(Admin admin, string id, string nickname, string fullName, string address, string email):base(fullName, address, email){
+        public customer(Admin admin, string id, string nickname, string fullName, string address, string email)
+        :base(fullName, address, email){
             this.Id = id;
             this.Nickname = nickname;
             this.Fullname = fullName;
@@ -23,7 +24,7 @@ namespace AssAdvance
         }
         public override string InfoUser()
         {
-            return $"{Id}\t{Nickname}\t{Fullname}\t{Address}\t{Email}";
+            return $"{Id}\t{Nickname}\t"+ToString();
         }
         public void ViewBook(){
             admin.ViewBook();
@@ -31,7 +32,6 @@ namespace AssAdvance
          public List<BookItems> searchBookItems(string bookName){
             return admin.searchBookItems(bookName);
          }
-         //Cart
          public void addCart(Cart c){
             this.Carts.Add(c);
             Console.WriteLine("Add Item to cart Successfull!");
@@ -39,7 +39,7 @@ namespace AssAdvance
          public void ViewCart(){
             foreach (var item in Carts)
             {
-                item.ViewCart();
+                item.ViewCartItems();
             }
          }
          

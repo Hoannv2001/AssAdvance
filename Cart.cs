@@ -18,7 +18,7 @@ namespace AssAdvance
             this.DateOrder = dateO;
             this.CartItems=items;
         }
-        public void ViewCart(){
+        public void ViewCartItems(){
             int totalQuantity = 0;
             double totalPrice = 0;
             Console.WriteLine(ToString());

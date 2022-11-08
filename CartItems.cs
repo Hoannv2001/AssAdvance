@@ -9,11 +9,7 @@ namespace AssAdvance
     {
         private string idCT;
         private int quanlity;
-        // private double totalPrice;
-        // private List<BookItems> bookItems;
-        private Cart cart;
         public string IdCT{get=>this.idCT; set=>idCT=value;}
-        public Cart Cart{get=>this.cart; set=>this.cart = value;}
         public int Quantity{get=>this.quanlity; set=>this.quanlity=value;}
         public List<BookItems> BookList{get; set;}
         public CartItems(int quanlity, string idCT ){
@@ -21,8 +17,8 @@ namespace AssAdvance
             this.IdCT = idCT;
             this.BookList= new List<BookItems>();
         }
-        public void addCartItems(BookItems bi){
-            this.BookList.Add(bi);
+        public void addBookInCartItem(BookItems bi){
+                this.BookList.Add(bi);
         }
         public bool UpdateBook(string idBook){
             var updatBook =  BookList.FindAll(a=>a.Id == idBook);
